@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isCartShow: false,
+  notification: null,
 };
 
 const cartSlice = createSlice({
@@ -11,6 +12,14 @@ const cartSlice = createSlice({
     toggleCartShow(state) {
       console.log("Executing");
       state.isCartShow = !state.isCartShow;
+    },
+    showNotification(state, action) {
+      console.log(action.payload);
+      state.notification = {
+        status: action.payload.status,
+        title: action.payload.title,
+        message: action.payload.message,
+      };
     },
   },
 });
