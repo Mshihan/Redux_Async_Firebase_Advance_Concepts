@@ -10,7 +10,6 @@ const cartSlice = createSlice({
   initialState: initialState,
   reducers: {
     toggleCartShow(state) {
-      console.log("Executing");
       state.isCartShow = !state.isCartShow;
     },
     showNotification(state, action) {
